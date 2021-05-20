@@ -10,6 +10,7 @@ class LoginSheetHeader extends StatelessWidget {
         const Text(
           'Login',
           style: TextStyle(
+            color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 20,
           ),
@@ -18,7 +19,7 @@ class LoginSheetHeader extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 8),
           child: Text(
             'Take the stress of deciding away and enjoy your meal.',
-            style: TextStyle(fontSize: 8),
+            style: TextStyle(fontSize: 8, color: Colors.black),
           ),
         ),
         InkWell(
@@ -79,6 +80,7 @@ class OtherSigninMethod extends StatelessWidget {
           Text(
             text,
             style: const TextStyle(
+              color: Colors.black,
               fontWeight: FontWeight.bold,
               fontSize: 10,
             ),

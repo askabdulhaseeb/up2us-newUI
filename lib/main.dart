@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:up2us/config/colors.dart';
-import 'screens/signinScreen/signin.dart';
+import 'package:up2us/screens/auth/registerationScreen/registeration_screen.dart';
+import 'screens/auth/signinScreen/signin.dart';
 import 'screens/splashScreen/splash_screen.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: '''Up2Us - Let's select eatables''',
       theme: ThemeData(
-        colorScheme: const ColorScheme.light(),
+        colorScheme: const ColorScheme.dark(),
         scaffoldBackgroundColor: darkColor,
         primaryColor: darkColor,
         accentColor: lightColor,
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       routes: {
         SplashScreen.routeName: (ctx) => SplashScreen(),
         SigninScreen.routeName: (ctx) => SigninScreen(),
+        RegisterationScreen.routeName: (ctx) => RegisterationScreen(),
       },
     );
   }

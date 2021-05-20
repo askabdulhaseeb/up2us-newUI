@@ -38,26 +38,31 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 40,
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 14),
-      margin: const EdgeInsets.symmetric(vertical: 6),
-      decoration: BoxDecoration(
-        border: Border.all(width: 0.3, color: Colors.grey),
-        borderRadius: BorderRadius.circular(30),
-      ),
-      child: Center(
-        child: TextFormField(
-          controller: widget._controller,
-          keyboardType: widget._textInputType,
-          textInputAction: widget._textInputAction,
-          obscureText: widget._obscureText,
-          decoration: InputDecoration(
-            hintText: widget._hint,
-            hintStyle: TextStyle(color: Colors.blueGrey.shade200),
-            border: InputBorder.none,
-          ),
+    return TextFormField(
+      controller: widget._controller,
+      autocorrect: false,
+      keyboardType: widget._textInputType,
+      textInputAction: widget._textInputAction,
+      obscureText: widget._obscureText,
+      cursorColor: Theme.of(context).accentColor,
+      style: const TextStyle(color: Colors.black),
+      decoration: InputDecoration(
+        contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+        hintText: widget._hint,
+        hintStyle: TextStyle(
+          color: Colors.blueGrey.shade200,
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          gapPadding: 0,
+        ),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          gapPadding: 0,
+        ),
+        suffix: const Icon(
+          Icons.close_rounded,
+          size: 16,
         ),
       ),
     );

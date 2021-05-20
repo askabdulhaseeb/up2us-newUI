@@ -1,8 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:up2us/config/app_images.dart';
-import '../signinScreen/signin.dart';
+import '../auth/signinScreen/signin.dart';
 
 class SplashScreen extends StatefulWidget {
   static const routeName = '/SplashScreen';
@@ -25,7 +24,11 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Image.asset(iAppNameWithLogo),
+        child: SizedBox(
+          height: 140,
+          width: 140,
+          child: Image.asset(iAppNameWithLogo),
+        ),
       ),
     );
   }

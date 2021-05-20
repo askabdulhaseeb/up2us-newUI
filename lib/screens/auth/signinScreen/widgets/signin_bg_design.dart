@@ -10,7 +10,7 @@ class SigninBackgroudDesign extends StatelessWidget {
       left: 0,
       right: 0,
       child: Container(
-        height: size.height * 0.7,
+        height: size.height * 0.68,
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
