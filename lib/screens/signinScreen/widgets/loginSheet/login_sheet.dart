@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:up2us/screens/auth/signinScreen/widgets/loginSheet/footer/login_with_email.dart';
+import 'footer/login_with_email.dart';
 import 'hearer/login_sheet_header.dart';
 
 class LoginSheet extends StatelessWidget {

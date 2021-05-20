@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:up2us/screens/auth/signinScreen/widgets/loginSheet/footer/custom_text_form_field.dart';
+
+import 'custom_text_form_field.dart';
 
 class LoginWithEmail extends StatelessWidget {
   final GlobalKey<FormState> _globalKey = GlobalKey<FormState>();

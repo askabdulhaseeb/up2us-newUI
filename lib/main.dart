@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:up2us/config/colors.dart';
-import 'screens/auth/signinScreen/signin.dart';
+import 'screens/signinScreen/signin.dart';
 import 'screens/splashScreen/splash_screen.dart';
 
 void main() {

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:up2us/config/app_images.dart';
-import 'package:up2us/screens/auth/signinScreen/signin.dart';
+import '../signinScreen/signin.dart';
 
 class SplashScreen extends StatefulWidget {
   static const routeName = '/SplashScreen';
