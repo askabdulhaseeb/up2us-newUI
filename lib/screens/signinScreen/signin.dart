@@ -20,7 +20,7 @@ class SigninScreen extends StatelessWidget {
                   height: 140,
                   width: 140,
                   child: Image(
-                    image: AssetImage(appNameWithLogo),
+                    image: AssetImage(iAppNameWithLogo),
                   ),
                 ),
                 LoginSheet(),
