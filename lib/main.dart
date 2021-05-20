@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:up2us/config/colors.dart';
-import 'package:up2us/screens/auth/registerationScreen/registeration_screen.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'config/colors.dart';
+import 'screens/auth/registerationScreen/registeration_screen.dart';
 import 'screens/auth/signinScreen/signin.dart';
 import 'screens/splashScreen/splash_screen.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -29,3 +32,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+// Certificate fingerprints:
+//   SHA1: F6:3C:6E:07:37:98:D1:37:8D:8D:AD:2B:80:BE:5E:2C:50:EF:71:F9
+//   SHA256: B8:1F:B2:FF:CB:2E:A2:45:12:1B:22:43:35:C5:B6:CC:A5:3B:CE:D4:6B:97:93:EF:76:D9:81:0F:F9:16:4C:6E
