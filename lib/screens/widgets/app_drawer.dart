@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:up2us/database/auth_methods.dart';
+import 'package:up2us/screens/auth/registerationScreen/registeration_screen.dart';
+import 'package:up2us/screens/auth/signinScreen/signin.dart';
 import '../../config/app_images.dart';
 import 'copyrights.dart';
 
@@ -46,6 +49,19 @@ class AppDrawer extends StatelessWidget {
               onTap: () {},
               child: const Text(
                 'About',
+                style: textStyle,
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                AuthMethods().signOut();
+                Navigator.of(context).pushNamedAndRemoveUntil(
+                  SigninScreen.routeName,
+                  (route) => false,
+                );
+              },
+              child: const Text(
+                'Signout',
                 style: textStyle,
               ),
             ),
