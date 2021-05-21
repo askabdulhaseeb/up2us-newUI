@@ -5,6 +5,8 @@ import 'package:up2us/database/register_menu_firebase_methods.dart';
 import 'package:up2us/database/user_local_data.dart';
 import 'package:up2us/models/register_menu.dart';
 import 'package:up2us/screens/widgets/app_drawer.dart';
+import 'package:up2us/screens/widgets/app_end_drawer.dart';
+import 'package:up2us/screens/widgets/user_profile_image.dart';
 import 'widgets/dish_card_widget.dart';
 import 'widgets/register_finish_button.dart';
 
@@ -44,19 +46,13 @@ class _RegisterationScreenState extends State<RegisterationScreen> {
           style: TextStyle(color: Theme.of(context).primaryColorDark),
         ),
         centerTitle: false,
-        actions: [
-          // ignore: prefer_if_elements_to_conditional_expressions
-          (UserLocalData.getImageURL() != null ||
-                  UserLocalData.getImageURL() != '')
-              ? CircleAvatar(
-                  radius: 20,
-                  backgroundImage: NetworkImage(UserLocalData.getImageURL()),
-                )
-              : const Icon(FontAwesomeIcons.userCircle, color: orangeColor),
-          const SizedBox(width: 14),
+        actions: const [
+          AppBarUserPhoto(),
+          SizedBox(width: 14),
         ],
       ),
       drawer: const AppDrawer(),
+      endDrawer: const AppEndDrawer(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 14),
         child: Column(
@@ -89,6 +85,22 @@ class _RegisterationScreenState extends State<RegisterationScreen> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class AppBarUserPhoto extends StatelessWidget {
+  const AppBarUserPhoto({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        Scaffold.of(context).openEndDrawer();
+      },
+      child: const UserProfileImage(),
     );
   }
 }
