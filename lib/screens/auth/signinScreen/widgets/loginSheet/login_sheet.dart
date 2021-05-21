@@ -1,11 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:up2us/screens/auth/signinScreen/widgets/loginSheet/login_button.dart';
-import 'footer/login_with_email.dart';
+import '../custom_text_form_field.dart';
 import 'hearer/login_sheet_header.dart';
+import 'login_button.dart';
 
-class LoginSheet extends StatelessWidget {
+class LoginSheet extends StatefulWidget {
+  @override
+  _LoginSheetState createState() => _LoginSheetState();
+}
+
+class _LoginSheetState extends State<LoginSheet> {
+  final _globalKey = GlobalKey<FormState>();
+  final TextEditingController _email = TextEditingController();
+  final TextEditingController _username = TextEditingController();
+  final TextEditingController _password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    const textStyle = TextStyle(
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+    );
     final Size size = MediaQuery.of(context).size;
     return Expanded(
       child: Scaffold(
@@ -30,7 +44,29 @@ class LoginSheet extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         LoginSheetHeader(),
-                        LoginWithEmail(),
+                        Form(
+                          key: _globalKey,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const SizedBox(height: 20),
+                              const Text('Username*', style: textStyle),
+                              CustomTextFormField(
+                                  controller: _username, hint: 'Your name'),
+                              const SizedBox(height: 6),
+                              const Text('Email*', style: textStyle),
+                              CustomTextFormField(
+                                  controller: _email, hint: 'mail@website.com'),
+                              const SizedBox(height: 6),
+                              const Text('Password*', style: textStyle),
+                              CustomTextFormField(
+                                controller: _password,
+                                hint: 'Min. 8 charecters',
+                                obscureText: true,
+                              ),
+                            ],
+                          ),
+                        ),
                       ],
                     ),
                   ),
