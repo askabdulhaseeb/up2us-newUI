@@ -42,7 +42,7 @@ class UserFirebaseMethods {
     return {
       _uid: user.uid,
       _displayName: user.displayName ?? '',
-      _username: user.email.replaceAll('@', '') ?? '',
+      _username: user.email.substring(0, user.email.indexOf('@')) ?? '',
       _email: user.email ?? '',
       _imageURL: user.photoURL ?? '',
     };

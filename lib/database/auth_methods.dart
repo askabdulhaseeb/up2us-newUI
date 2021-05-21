@@ -13,20 +13,25 @@ class AuthMethods {
 
       final GoogleSignInAccount googleSignInAccount =
           await _googleSignIn.signIn();
+      print('Signin');
 
       final GoogleSignInAuthentication googleSignInAuthentication =
           await googleSignInAccount.authentication;
+      print('Auth');
       final AuthCredential credential = GoogleAuthProvider.credential(
           idToken: googleSignInAuthentication.idToken,
           accessToken: googleSignInAuthentication.accessToken);
+      print('Token');
       final UserCredential result =
           await _firebaseAuth.signInWithCredential(credential);
+      print('Result');
 
       if (result != null) {
-        User user = result.user;
+        final User user = result.user;
         final bool _isUserExist =
             await UserFirebaseMethods().isUserExist(uid: user.uid);
         if (!_isUserExist) {
+          print('User Not Exist');
           await UserFirebaseMethods().addUser(
             uid: user.uid,
             userInfoMap: UserFirebaseMethods().userToMap(user: user),
@@ -36,7 +41,9 @@ class AuthMethods {
         UserLocalData.setDisplayName(user.displayName);
         UserLocalData.setEmail(user.email);
         UserLocalData.setImageURL(user.photoURL);
-        UserLocalData.setEmail(user.email.replaceAll('@', '').trim());
+        UserLocalData.setEmail(
+          user.email.substring(0, user.email.indexOf('@')),
+        );
         return user;
       }
     } catch (e) {

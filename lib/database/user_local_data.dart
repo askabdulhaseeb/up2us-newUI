@@ -19,8 +19,8 @@ class UserLocalData {
   //
   static Future setUID(String uid) async =>
       _preferences.setString(_uidKey, uid ?? '');
-  static Future setUsername(String email) async =>
-      _preferences.setString(_username, email.replaceAll('@', '').trim() ?? '');
+  static Future setUsername(String email) async => _preferences.setString(
+      _username, email.substring(0, email.indexOf('@')).trim() ?? '');
   static Future setDisplayName(String displayName) async =>
       _preferences.setString(_displayNameKey, displayName ?? '');
   static Future setImageURL(String imageURL) async =>
