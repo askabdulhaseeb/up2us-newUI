@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:up2us/database/user_local_data.dart';
 import 'config/colors.dart';
 import 'screens/auth/registerationScreen/registeration_screen.dart';
 import 'screens/auth/signinScreen/signin.dart';
@@ -8,6 +9,7 @@ import 'screens/splashScreen/splash_screen.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await UserLocalData.init();
   runApp(MyApp());
 }
 
