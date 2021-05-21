@@ -23,7 +23,10 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: darkColor,
         primaryColor: darkColor,
         accentColor: lightColor,
+        splashColor: orangeColor,
+        primaryColorDark: orangeColor,
         primarySwatch: Colors.orange,
+        iconTheme: const IconThemeData(color: orangeColor),
       ),
       home: SplashScreen(),
       routes: {
