@@ -28,12 +28,6 @@ class SigninScreen extends StatelessWidget {
               ],
             ),
           ),
-          Positioned(
-            bottom: 20,
-            left: MediaQuery.of(context).size.width / 5,
-            right: MediaQuery.of(context).size.width / 5,
-            child: const LoginButton(),
-          ),
         ],
       ),
     );
