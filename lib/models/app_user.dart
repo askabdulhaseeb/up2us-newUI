@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class AppUser {
@@ -29,13 +30,13 @@ class AppUser {
     };
   }
 
-  factory AppUser.fromDocument(doc) {
+  factory AppUser.fromDocument(DocumentSnapshot<Map<String, dynamic>> docs) {
     return AppUser(
-      uid: doc.data()['uid'].toString() ?? '',
-      displayName: doc.data()['displayName'].toString() ?? '',
-      username: doc.data()['username'].toString() ?? '',
-      imageURL: doc.data()['imageURL'].toString() ?? '',
-      email: doc.data()['email'].toString() ?? '',
+      uid: docs?.data()['uid'].toString() ?? '',
+      displayName: docs?.data()['displayName'].toString() ?? '',
+      username: docs?.data()['username'].toString() ?? '',
+      imageURL: docs?.data()['imageURL'].toString() ?? '',
+      email: docs?.data()['email'].toString() ?? '',
     );
   }
 

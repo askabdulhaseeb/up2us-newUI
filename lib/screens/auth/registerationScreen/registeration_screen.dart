@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:up2us/database/register_menu_firebase_methods.dart';
-import 'package:up2us/database/user_local_data.dart';
-import 'package:up2us/models/register_menu.dart';
-import 'package:up2us/screens/widgets/app_drawer.dart';
-import 'package:up2us/screens/widgets/app_end_drawer.dart';
-import 'package:up2us/screens/widgets/user_profile_image.dart';
+import '../../../database/register_menu_firebase_methods.dart';
+import '../../../database/user_local_data.dart';
+import '../../../models/register_menu.dart';
+import '../../widgets/app_drawer.dart';
+import '../../widgets/app_end_drawer.dart';
+import '../../widgets/user_profile_image.dart';
 import 'widgets/dish_card_widget.dart';
 import 'widgets/register_finish_button.dart';
 

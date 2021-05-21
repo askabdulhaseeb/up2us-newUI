@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:up2us/database/auth_methods.dart';
-import 'package:up2us/screens/auth/registerationScreen/registeration_screen.dart';
-import 'package:up2us/utils/show_loading.dart';
-import 'package:up2us/utils/show_toast.dart';
+import '../../../../../database/auth_methods.dart';
+import '../../../../../utils/show_loading.dart';
+import '../../../../../utils/show_toast.dart';
+import '../../../registerationScreen/registeration_screen.dart';
 
 class LoginButton extends StatelessWidget {
   final GlobalKey<FormState> globalKey;
@@ -36,6 +36,7 @@ class LoginButton extends StatelessWidget {
               );
             }
           } else {
+            Navigator.of(context).pop();
             showErrorToast('Username or Email is invaild');
           }
         }

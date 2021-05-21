@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:up2us/config/app_images.dart';
-import 'package:up2us/database/user_local_data.dart';
-import 'package:up2us/screens/auth/registerationScreen/registeration_screen.dart';
+import '../../config/app_images.dart';
 import '../auth/signinScreen/signin.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,13 +16,13 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
       const Duration(seconds: 3),
       () {
-        if (UserLocalData?.getUID() != '') {
-          Navigator.of(context).pushNamedAndRemoveUntil(
-              RegisterationScreen.routeName, (route) => false);
-        } else {
-          Navigator.of(context).pushNamedAndRemoveUntil(
-              SigninScreen.routeName, (route) => false);
-        }
+        // if (UserLocalData?.getUID() != '') {
+        //   Navigator.of(context).pushNamedAndRemoveUntil(
+        //       RegisterationScreen.routeName, (route) => false);
+        // } else {
+        Navigator.of(context)
+            .pushNamedAndRemoveUntil(SigninScreen.routeName, (route) => false);
+        // }
       },
     );
   }

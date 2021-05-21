@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import '../models/app_user.dart';
 import '../utils/show_toast.dart';
 import 'user_firebase_methods.dart';
 import 'user_local_data.dart';
@@ -59,6 +60,9 @@ class AuthMethods {
         final User currentUser = FirebaseAuth.instance.currentUser;
         assert(user.uid == currentUser.uid);
         UserLocalData.setUID(user.uid);
+        final docs = await UserFirebaseMethods().getUserInfo(uid: user.uid);
+        final AppUser appUser = AppUser.fromDocument(docs);
+        UserFirebaseMethods().updateUserLocalData(user: appUser);
         return user;
       }
     } catch (signUpError) {
@@ -66,5 +70,10 @@ class AuthMethods {
       return null;
     }
     return null;
+  }
+
+  Future signOut() async {
+    UserLocalData.signout();
+    await FirebaseAuth.instance.signOut();
   }
 }

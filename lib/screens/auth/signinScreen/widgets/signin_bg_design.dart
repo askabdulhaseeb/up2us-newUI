@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:up2us/config/colors.dart';
+import '../../../../config/colors.dart';
 
 class SigninBackgroudDesign extends StatelessWidget {
   @override

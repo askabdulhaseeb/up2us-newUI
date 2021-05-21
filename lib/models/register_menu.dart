@@ -15,16 +15,16 @@ class RegisterMenu {
   Map<String, dynamic> toMap() {
     return {
       'id': '',
-      'title': title,
-      'imageURL': imageURL,
+      'title': title ?? '',
+      'imageURL': imageURL ?? '',
     };
   }
 
   factory RegisterMenu.fromDocument(docs) {
     return RegisterMenu(
-      id: docs?.data()['id'].toString(),
-      title: docs?.data()['title'].toString(),
-      imageURL: docs?.data()['imageURL'].toString(),
+      id: docs?.data()['id'].toString() ?? '',
+      title: docs?.data()['title'].toString() ?? '',
+      imageURL: docs?.data()['imageURL'].toString() ?? '',
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:up2us/models/app_user.dart';
+import '../models/app_user.dart';
 import '../utils/show_toast.dart';
 import 'user_local_data.dart';
 
@@ -28,7 +28,8 @@ class UserFirebaseMethods {
     });
   }
 
-  Future getUserInfo({@required String uid}) async {
+  Future<DocumentSnapshot<Map<String, dynamic>>> getUserInfo(
+      {@required String uid}) async {
     return FirebaseFirestore.instance.collection(_fUser).doc(uid).get();
   }
 
@@ -53,6 +54,6 @@ class UserFirebaseMethods {
     UserLocalData.setDisplayName(user.getDisplayName);
     UserLocalData.setImageURL(user.getImageURL);
     UserLocalData.setEmail(user.getEmail);
-    UserLocalData.setUsername(user.getUsername);
+    UserLocalData.setUsername(user.getEmail);
   }
 }

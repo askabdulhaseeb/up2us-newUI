@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:up2us/config/colors.dart';
+import '../../config/colors.dart';
 import '../../database/user_local_data.dart';
 
 class UserProfileImage extends StatelessWidget {
@@ -12,8 +12,8 @@ class UserProfileImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return (UserLocalData.getImageURL() != null ||
-            UserLocalData.getImageURL() != '')
+    return (UserLocalData?.getImageURL() != null &&
+            UserLocalData?.getImageURL() != '')
         ? CircleAvatar(
             radius: radius,
             backgroundColor: Theme.of(context).primaryColorDark,
@@ -26,6 +26,10 @@ class UserProfileImage extends StatelessWidget {
               ),
             ),
           )
-        : const Icon(FontAwesomeIcons.userCircle, color: orangeColor);
+        : Icon(
+            FontAwesomeIcons.userCircle,
+            color: orangeColor,
+            size: radius,
+          );
   }
 }

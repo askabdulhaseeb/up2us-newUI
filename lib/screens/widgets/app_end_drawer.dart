@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:up2us/database/user_local_data.dart';
-import 'package:up2us/screens/widgets/user_profile_image.dart';
+import '../../database/user_local_data.dart';
+import 'user_profile_image.dart';
 
 class AppEndDrawer extends StatelessWidget {
   const AppEndDrawer({Key key}) : super(key: key);

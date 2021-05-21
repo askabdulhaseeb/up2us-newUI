@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:up2us/database/auth_methods.dart';
-import 'package:up2us/screens/auth/registerationScreen/registeration_screen.dart';
-import 'package:up2us/utils/show_loading.dart';
+import '../../../../../database/auth_methods.dart';
+import '../../../../../utils/show_loading.dart';
+import '../../../registerationScreen/registeration_screen.dart';
 
 class LoginSheetHeader extends StatelessWidget {
   @override

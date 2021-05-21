@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:up2us/config/app_images.dart';
-import 'package:up2us/screens/widgets/copyrights.dart';
+import '../../config/app_images.dart';
+import 'copyrights.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key key}) : super(key: key);
