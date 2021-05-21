@@ -5,6 +5,7 @@ import 'package:up2us/database/register_menu_firebase_methods.dart';
 import 'package:up2us/database/user_local_data.dart';
 import 'package:up2us/models/register_menu.dart';
 import 'widgets/dish_card_widget.dart';
+import 'widgets/register_finish_button.dart';
 
 class RegisterationScreen extends StatefulWidget {
   static const routeName = '/RegisterationScreen';
@@ -14,17 +15,11 @@ class RegisterationScreen extends StatefulWidget {
 
 class _RegisterationScreenState extends State<RegisterationScreen> {
   List<RegisterMenu> menu = [];
-
   Future<void> _onPageLoad() async {
     final data = await RegisterMenuFirebaseMethods().getRegisterMenuItems();
     // ignore: avoid_function_literals_in_foreach_calls
-    data.docs.forEach((element) {
-      menu.add(
-        RegisterMenu(
-          title: element.data()['title'].toString(),
-          imageURL: element.data()['imageURL'].toString(),
-        ),
-      );
+    data.docs.forEach((docs) {
+      menu.add(RegisterMenu.fromDocument(docs));
     });
     setState(() {});
   }
@@ -72,13 +67,24 @@ class _RegisterationScreenState extends State<RegisterationScreen> {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
             Expanded(
-              child: ListView.builder(
-                itemCount: menu.length,
-                itemBuilder: (context, index) {
-                  return DishCardWidget(menu: menu[index]);
-                },
+              child: Stack(
+                children: [
+                  ListView.builder(
+                    itemCount: menu.length,
+                    itemBuilder: (context, index) {
+                      return DishCardWidget(
+                        menu: menu[index],
+                      );
+                    },
+                  ),
+                  const Positioned(
+                      bottom: 0,
+                      left: 0,
+                      right: 0,
+                      child: RegisterFinishButton())
+                ],
               ),
-            )
+            ),
           ],
         ),
       ),
