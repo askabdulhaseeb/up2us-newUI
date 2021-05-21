@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:up2us/config/colors.dart';
 import '../../../../models/register_menu.dart';
 
 class DishCardWidget extends StatefulWidget {

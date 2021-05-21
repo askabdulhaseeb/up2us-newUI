@@ -71,11 +71,16 @@ class _LoginSheetState extends State<LoginSheet> {
                     ),
                   ),
                 ),
-                const Positioned(
+                Positioned(
                   bottom: 0,
                   left: 60,
                   right: 60,
-                  child: LoginButton(),
+                  child: LoginButton(
+                    globalKey: _globalKey,
+                    email: _email,
+                    password: _password,
+                    username: _username,
+                  ),
                 )
               ],
             ),

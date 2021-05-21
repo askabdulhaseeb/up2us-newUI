@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:up2us/config/colors.dart';
 import 'package:up2us/database/register_menu_firebase_methods.dart';
 import 'package:up2us/database/user_local_data.dart';
 import 'package:up2us/models/register_menu.dart';

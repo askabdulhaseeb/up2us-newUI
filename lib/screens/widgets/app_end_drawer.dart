@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:up2us/database/user_local_data.dart';
 import 'package:up2us/screens/widgets/user_profile_image.dart';
 

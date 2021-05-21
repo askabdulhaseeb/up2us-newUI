@@ -45,4 +45,26 @@ class AuthMethods {
     }
     return null;
   }
+
+  Future<User> loginWithEmailAndPassword(String email, String password) async {
+    try {
+      final UserCredential result = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password)
+          .catchError((obj) {
+        showErrorToast(obj.toString());
+        return null;
+      });
+      if (result != null) {
+        final User user = result.user;
+        final User currentUser = FirebaseAuth.instance.currentUser;
+        assert(user.uid == currentUser.uid);
+        UserLocalData.setUID(user.uid);
+        return user;
+      }
+    } catch (signUpError) {
+      showErrorToast(signUpError.toString());
+      return null;
+    }
+    return null;
+  }
 }
