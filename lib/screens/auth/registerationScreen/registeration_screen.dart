@@ -4,6 +4,7 @@ import 'package:up2us/config/colors.dart';
 import 'package:up2us/database/register_menu_firebase_methods.dart';
 import 'package:up2us/database/user_local_data.dart';
 import 'package:up2us/models/register_menu.dart';
+import 'package:up2us/screens/widgets/app_drawer.dart';
 import 'widgets/dish_card_widget.dart';
 import 'widgets/register_finish_button.dart';
 
@@ -55,7 +56,7 @@ class _RegisterationScreenState extends State<RegisterationScreen> {
           const SizedBox(width: 14),
         ],
       ),
-      drawer: const Drawer(),
+      drawer: const AppDrawer(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 14),
         child: Column(

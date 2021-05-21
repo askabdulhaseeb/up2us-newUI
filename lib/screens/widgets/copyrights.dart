@@ -13,39 +13,45 @@ class Copyrights extends StatelessWidget {
       onTap: () {
         _launchURL();
       },
-      child: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Icon(
-              FontAwesomeIcons.copyright,
-              color: Theme.of(context).primaryColor,
-            ),
-            const SizedBox(width: 4),
-            Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Rana Abdul Haseeb',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).primaryColor,
-                      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(
+            FontAwesomeIcons.copyright,
+            color: Theme.of(context).primaryColorDark,
+          ),
+          const SizedBox(width: 4),
+          Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Rana Abdul Haseeb',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).accentColor,
                     ),
-                    const Text(
-                      ' has the copyrights',
+                  ),
+                  const Text(
+                    'has copyright',
+                    style: TextStyle(
+                      fontSize: 10,
                     ),
-                  ],
+                  ),
+                ],
+              ),
+              const Text(
+                'Copyrights will be transfree after payment',
+                style: TextStyle(
+                  fontSize: 10,
                 ),
-                const Text('Copyrights will be transfree after payment'),
-                const SizedBox(height: 4),
-              ],
-            ),
-          ],
-        ),
+              ),
+              const SizedBox(height: 4),
+            ],
+          ),
+        ],
       ),
     );
   }
